@@ -12,6 +12,6 @@ unsetopt correct_all
 
 if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
 
-. ~/dotfiles/functions.sh
-. ~/dotfiles/aliases.sh
-. ~/dotfiles/otb.sh
+. ~/dotfiles/zsh/functions.sh
+. ~/dotfiles/zsh/aliases.sh
+. ~/dotfiles/zsh/otb.sh
