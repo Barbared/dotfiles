@@ -15,24 +15,17 @@ Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
 Bundle 'tpope/vim-fugitive'
-Bundle 'vim-scripts/bufkill.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'sleistner/vim-jshint'
-Bundle 'pangloss/vim-javascript'
 Bundle 'tpope/vim-commentary'
-Bundle 'epmatsw/ag.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'edsono/vim-matchit'
-Bundle 'ap/vim-css-color'
 Bundle 'scrooloose/syntastic'
 Bundle 'skalnik/vim-vroom'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'ervandew/supertab'
 Bundle 'othree/html5.vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'altercation/vim-colors-solarized'
 
 filetype plugin on
 filetype indent on
@@ -40,11 +33,6 @@ syntax enable
 
 set term=xterm-256color
 set background=dark
-
-try
-  colorscheme solarized
-catch /^Vim\%((\a\+)\)\=:E185/
-endtry
 
 set encoding=utf8                                                              " Set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac                                                           " Use Unix as the standard file type
@@ -236,6 +224,10 @@ endif
 " Powerline (https://github.com/Lokaltog/vim-powerline)
 let g:Powerline_symbols = 'fancy'
 " Fugitive (https://github.com/tpope/vim-fugitive)
+noremap <Up>       :echoerr "Use k instead!"<CR>
+noremap <Down>     :echoerr "Use j instead!"<CR>
+noremap <Left>     :echoerr "Use h instead!"<CR>
+noremap <Right>    :echoerr "Use l instead!"<CR>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gb :Gblame<cr>
@@ -270,6 +262,3 @@ let g:ctrlp_mruf_max = 250 " number of recently opened files
 nmap <leader>lw :CtrlP<CR><C-\>w
 nnoremap <c-b> :CtrlPBuffer<cr>                                                " Open CtrlP in buffer mode
 nnoremap <c-f> :CtrlPMRU<cr>                                                   " Open CtrlP in recent files mode
-
-" let g:vroom_use_vimux = 1
-" let VimuxUseNearestPane = 1
