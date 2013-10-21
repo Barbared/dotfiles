@@ -26,6 +26,7 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'ervandew/supertab'
 Bundle 'othree/html5.vim'
+Bundle 'tpope/vim-cucumber'
 
 filetype plugin on
 filetype indent on
