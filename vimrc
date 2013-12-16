@@ -14,19 +14,17 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 
 " Define bundles via Github repos
-Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
-Bundle 'tpope/vim-commentary'
-Bundle 'scrooloose/nerdtree'
-Bundle 'edsono/vim-matchit'
 Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-commentary'
+Bundle 'ervandew/supertab'
+Bundle 'edsono/vim-matchit'
 Bundle 'skalnik/vim-vroom'
+Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
-Bundle 'ervandew/supertab'
-Bundle 'othree/html5.vim'
-Bundle 'tpope/vim-cucumber'
 
 filetype plugin on
 filetype indent on
@@ -248,8 +246,7 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeMouseMode = 1
 let NERDTreeIgnore = ['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$', 'whoosh_index', 'xapian_index', '.*.pid', 'monitor.py', '.*-fixtures-.*.json', '.*\.o$', 'db.db', 'tags.bak', 'tags']
-" Scratch (https://github.com/vim-scripts/scratch.vim)
-noremap <F10> :Sscratch<cr>
+
 " Ctrl-P (https://github.com/kien/ctrlp.vim)
 let g:ctrlp_dont_split = 'NERD_tree_2'
 let g:ctrlp_map = '<c-p>'
