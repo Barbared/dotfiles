@@ -50,6 +50,7 @@ set smartcase
 set ignorecase
 set hlsearch
 set incsearch
+set backspace=eol,start,indent
 
 map 0 ^
 map <silent> <leader><cr> :noh<cr>
@@ -73,73 +74,20 @@ nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
 nnoremap <leader><leader> <c-^>
 
-autocmd! bufwritepost vimrc source ~/.vimrc
-command! FR set filetype=ruby
-
-" Specify the behavior when switching between buffers 
-try
-  set switchbuf=useopen,usetab,newtab
-  set stal=2
-catch
-endtry
-
-" Return to last edit position when opening files (You want this!)
-autocmd BufReadPost *
-     \ if line("'\"") > 0 && line("'\"") <= line("$") |
-     \   exe "normal! g`\"" |
-     \ endif
-" Remember info about open buffers on close
-set viminfo^=%
-
-" Delete trailing white space on save, useful for Ruby and CoffeeScript
-func! DeleteTrailingWS()
-  exe "normal mz"
-  %s/\s\+$//ge
-  exe "normal `z"
-endfunc
-autocmd BufWrite *.rb :call DeleteTrailingWS()
-autocmd BufWrite *.coffee :call DeleteTrailingWS()
-autocmd BufWrite *.js :call DeleteTrailingWS()
-
-if has("autocmd")
-  " In Makefiles, use real tabs, not tabs expanded to spaces
-  au FileType make set noexpandtab
-  au FileType javascript :iabbrev <buffer> iff if ( ) {  }<left><left><left><left><left><left><left><left>
-  au FileType ruby :iabbrev <buffer> lett let(:) {  }<left><left><left><left><left><left><left>
-
-  " Make sure all markdown files have the correct filetype set and setup wrapping
-  au BufRead,BufNewFile *.{md,markdown,mdown,mkd,mkdn,txt} setf markdown
-
-  " Treat JSON files like JavaScript
-  au BufNewFile,BufRead *.json set ft=javascript
-
-  augroup RubyShenanigans
-    au!
-    autocmd BufRead,BufNewFile Gemfile,Rakefile,Capfile
-      \ set filetype=ruby
-    autocmd BufRead,BufNewFile *.rb
-      \ map <C-s> :!ruby -cw %<cr>
-  augroup END
-endif
-
-" Powerline (https://github.com/Lokaltog/vim-powerline)
-let g:Powerline_symbols = 'fancy'
-" Fugitive (https://github.com/tpope/vim-fugitive)
+" Hard mode
 noremap <Up>       :echoerr "Use k instead!"<CR>
 noremap <Down>     :echoerr "Use j instead!"<CR>
 noremap <Left>     :echoerr "Use h instead!"<CR>
 noremap <Right>    :echoerr "Use l instead!"<CR>
+
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gb :Gblame<cr>
-augroup ft_fugitive
-    au!
-    au BufNewFile,BufRead .git/index setlocal nolist
-augroup END
-" NERDTree (https://github.com/scrooloose/nerdtree)
+
 noremap  <F2> :NERDTreeToggle<cr>
-inoremap <F2> <esc>:NERDTreeToggle<cr>
-map :where :NERDTreeFind<cr>
+
+autocmd! bufwritepost vimrc source ~/.vimrc
+
 au Filetype nerdtree setlocal nolist
 let g:NERDTreeWinPos = "left"
 let NERDTreeHighlightCursorline=1
