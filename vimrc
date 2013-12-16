@@ -52,7 +52,6 @@ set hlsearch
 set incsearch
 set backspace=eol,start,indent
 
-map 0 ^
 map <silent> <leader><cr> :noh<cr>
 map <leader>pp :setlocal paste!<cr>
 map <leader>. :A<cr>
@@ -72,21 +71,17 @@ map <F6> :bd<CR>
 map <F9> :!ctags --exclude=public --exclude=_html --exclude=tmp --exclude=log --exclude=coverage --extra=+f -R *<CR><CR>
 nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
-nnoremap <leader><leader> <c-^>
-
-" Hard mode
 noremap <Up>       :echoerr "Use k instead!"<CR>
 noremap <Down>     :echoerr "Use j instead!"<CR>
 noremap <Left>     :echoerr "Use h instead!"<CR>
 noremap <Right>    :echoerr "Use l instead!"<CR>
-
+noremap  <F2> :NERDTreeToggle<cr>
 nnoremap <leader>gd :Gdiff<cr>
 nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gb :Gblame<cr>
-
-noremap  <F2> :NERDTreeToggle<cr>
-
-autocmd! bufwritepost vimrc source ~/.vimrc
+nnoremap <leader><leader> <c-^>
+nnoremap <c-b> :CtrlPBuffer<cr>
+nnoremap <c-f> :CtrlPMRU<cr>
 
 au Filetype nerdtree setlocal nolist
 let g:NERDTreeWinPos = "left"
@@ -97,16 +92,14 @@ let NERDTreeDirArrows = 1
 let NERDTreeMouseMode = 1
 let NERDTreeIgnore = ['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$', 'whoosh_index', 'xapian_index', '.*.pid', 'monitor.py', '.*-fixtures-.*.json', '.*\.o$', 'db.db', 'tags.bak', 'tags']
 
-" Ctrl-P (https://github.com/kien/ctrlp.vim)
 let g:ctrlp_dont_split = 'NERD_tree_2'
 let g:ctrlp_map = '<c-p>'
-let g:ctrlp_match_window_bottom = 0 " show the match window at the top of the screen
-let g:ctrlp_max_height = 10 " maxiumum height of match window
-let g:ctrlp_switch_buffer = 'et' " jump to a file if it's open already
-let g:ctrlp_use_caching = 1 " enable caching
-let g:ctrlp_clear_cache_on_exit=0 " speed up by not removing clearing cache evertime
-let g:ctrlp_show_hidden = 1 " show me dotfiles
-let g:ctrlp_mruf_max = 250 " number of recently opened files
-nmap <leader>lw :CtrlP<CR><C-\>w
-nnoremap <c-b> :CtrlPBuffer<cr>                                                " Open CtrlP in buffer mode
-nnoremap <c-f> :CtrlPMRU<cr>                                                   " Open CtrlP in recent files mode
+let g:ctrlp_match_window_bottom = 0
+let g:ctrlp_max_height = 10
+let g:ctrlp_switch_buffer = 'et'
+let g:ctrlp_use_caching = 1
+let g:ctrlp_clear_cache_on_exit=0
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_mruf_max = 250
+
+autocmd! bufwritepost vimrc source ~/.vimrc
