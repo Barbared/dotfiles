@@ -54,62 +54,24 @@ set incsearch
 map 0 ^
 map <silent> <leader><cr> :noh<cr>
 map <leader>pp :setlocal paste!<cr>
-map <F6> :bd<CR>
-map <F7> :bd<CR>:BD<CR>
-map <F9> :!ctags --exclude=public --exclude=_html --exclude=tmp --exclude=log --exclude=coverage --extra=+f -R *<CR><CR>
-
-nmap <C-n> :bnext<CR>
-nmap <C-b> :bprev<CR>
-
-" switch most recent buffers
-nnoremap <leader><leader> <c-^>
-
 map <leader>. :A<cr>
 map <leader>/ :vs<cr>,.
 map <leader>? :hs<cr>,.
-
-nnoremap <leader>' ""yls<c-r>={'"': "'", "'": '"'}[@"]<cr><esc>
-map <leader>rpp :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
-
+map <leader>tn :tabnew<cr>
+map <leader>tc :tabclose<cr>
+map <leader>] :tabn<cr>
+map <leader>[ :tabp<cr>
 map :vs :vsplit<cr><c-l>
-map <leader>vs :vs
 map :hs :split<cr><c-j>
-map <leader>hs :hs
-
-" Remap shift key failure
-command! W :w
-command! Wq :wq
-command! Wqa :wqa
-command! E :e
-
-" Smart way to move between windows
 map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
-
-map <leader>ss :setlocal spell!<cr>
-map <leader>sn ]s
-map <leader>sp [s
-map <leader>sa zg
-map <leader>s? z=
-
-" Useful mappings for managing tabs
-map <leader>tn :tabnew<cr>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-map <leader>] :tabn<cr>
-map <leader>[ :tabp<cr>
-map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
-
-map <leader>gg :topleft 40 :split Gemfile<cr>
-map <leader>e :e! ~/.vimrc<cr>
-
-map <leader>qq :qa!<cr>
-map <leader>qw :wqa!<cr>
-
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
+map <F6> :bd<CR>
+map <F9> :!ctags --exclude=public --exclude=_html --exclude=tmp --exclude=log --exclude=coverage --extra=+f -R *<CR><CR>
+nmap <C-n> :bnext<CR>
+nmap <C-b> :bprev<CR>
+nnoremap <leader><leader> <c-^>
 
 autocmd! bufwritepost vimrc source ~/.vimrc
 command! FR set filetype=ruby
