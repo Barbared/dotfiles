@@ -1,19 +1,13 @@
 let mapleader = ","
-
-if executable('/bin/zsh')
-  set shell=/bin/zsh
-endif
-
-set nocompatible
-
 filetype off
+syntax enable
+
+set shell=/bin/zsh
 set rtp+=~/.vim/bundle/vundle/
+
 call vundle#rc()
 
-" Let Vundle manage Vundle
 Bundle 'gmarik/vundle'
-
-" Define bundles via Github repos
 Bundle 'scrooloose/nerdtree'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Lokaltog/vim-powerline'
@@ -26,17 +20,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 
-filetype plugin on
-filetype indent on
-syntax enable
-
 set term=xterm-256color
 set background=dark
 
-set encoding=utf8                                                              " Set utf8 as standard encoding and en_US as the standard language
-set ffs=unix,dos,mac                                                           " Use Unix as the standard file type
-set autoread                                                                   " Set to auto read when a file is changed from the outside
-set showcmd
 set number                                                                     " Show Line Numbers
 set ruler                                                                      " Always show current position
 set list                                                                       " Show invisible characters
