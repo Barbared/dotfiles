@@ -4,22 +4,6 @@ syntax enable
 
 set shell=/bin/zsh
 set rtp+=~/.vim/bundle/vundle/
-
-call vundle#rc()
-
-Bundle 'gmarik/vundle'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/syntastic'
-Bundle 'tpope/vim-commentary'
-Bundle 'ervandew/supertab'
-Bundle 'edsono/vim-matchit'
-Bundle 'skalnik/vim-vroom'
-Bundle 'tpope/vim-fugitive'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-
 set term=xterm-256color
 set background=dark
 set number
@@ -40,8 +24,6 @@ set shiftwidth=2
 set tabstop=2
 set splitright
 set splitbelow
-set mouse=a
-set mousehide
 set showmatch
 set mat=2
 set foldmethod=manual
@@ -77,7 +59,6 @@ noremap <Left>     :echoerr "Use h instead!"<CR>
 noremap <Right>    :echoerr "Use l instead!"<CR>
 noremap  <F2> :NERDTreeToggle<cr>
 nnoremap <leader>gd :Gdiff<cr>
-nnoremap <leader>gs :Gstatus<cr>
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader><leader> <c-^>
 nnoremap <c-b> :CtrlPBuffer<cr>
@@ -103,3 +84,16 @@ let g:ctrlp_show_hidden = 1
 let g:ctrlp_mruf_max = 250
 
 autocmd! bufwritepost vimrc source ~/.vimrc
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'scrooloose/nerdtree'
+Bundle 'kien/ctrlp.vim'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'scrooloose/syntastic'
+Bundle 'tpope/vim-commentary'
+Bundle 'ervandew/supertab'
+Bundle 'edsono/vim-matchit'
+Bundle 'skalnik/vim-vroom'
+Bundle 'tpope/vim-fugitive'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
