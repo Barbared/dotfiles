@@ -22,87 +22,41 @@ Bundle 'tpope/vim-rails'
 
 set term=xterm-256color
 set background=dark
-
-set number                                                                     " Show Line Numbers
-set ruler                                                                      " Always show current position
-set list                                                                       " Show invisible characters
-set lazyredraw                                                                 " Don't redraw while executing macros (good performance config)
-set hid                                                                        " A buffer becomes hidden when it is abandoned
-
-set history=1000                                                               " Sets how many lines of history VIM has to remember
-set nobackup                                                                   " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nowb
-set noswapfile
-
-set colorcolumn=80                                                             " Highlight the 80th column
-set cmdheight=1                                                                " Height of the command bar
-set laststatus=2                                                               " Always show the status line
-
-set cursorline
-set cursorcolumn
-set so=7                                                                       " Set 7 lines to the cursor - when moving vertically using j/k
-set virtualedit=onemore                                                        " allow for cursor beyond last character
-
-set wildmenu                                                                   " Turn on the Wild menu
+set number
+set ruler
+set list
+set colorcolumn=80
+set cmdheight=1
+set laststatus=2
+set so=7
+set wildmenu
 set wildmode=list:longest,list:full
-set wildignore+=*.o,*.obj,.bundle,coverage,.DS_Store,_html,.git,*.rbc,*.class,.svn,vendor/gems/*,vendor/rails/*
-
-set listchars=""                                                               " Reset the listchars
-set listchars=eol:¬
-set listchars=tab:▸\                                                           " a tab should display as "  ", trailing whitespace as "."
-set listchars+=trail:.                                                         " show trailing spaces as dots
-set listchars+=extends:>                                                       " The character to show in the last column when wrap is off and the line continues beyond the right of the screen
-set listchars+=precedes:<                                                      " The character to show in the first column when wrap is off and the line continues beyond the left of the screen
-set whichwrap+=<,>,h,l
-set backspace=eol,start,indent                                                 " Configure backspace so it acts as it should act
-set isk+=_,$,@,%,#                                                             " These aren't word dividers
-
-set expandtab                                                                  " Use spaces instead of tabs
-set smarttab                                                                   " Be smart when using tabs
-set shiftwidth=2                                                               " 1 tab == 2 spaces
+set listchars=""
+set listchars=tab:▸\
+set listchars+=trail:.
+set expandtab
+set smarttab
+set shiftwidth=2
 set tabstop=2
-set lbr
-set tw=500                                                                     " Linebreak on 500 characters
-set ai                                                                         " Auto indent
-set si                                                                         " Smart indent
-set wrap                                                                       " Wrap lines
-
-set noerrorbells
-set novisualbell
-set t_vb=
-set tm=500"
-
-set splitright                                                                 " Default to opening a split to the right instead of the left
-set splitbelow                                                                 " Default to opening a split below instead of above
-
+set splitright
+set splitbelow
 set mouse=a
 set mousehide
-
-set showmatch                                                                  " Show matching brackets when text indicator is over them
-set mat=2                                                                      " How many tenths of a second to blink when matching brackets
-set foldmethod=manual                                                          " for super fast autocomplete
-
+set showmatch
+set mat=2
+set foldmethod=manual
 set clipboard=unnamed
-
-set smartcase                                                                  " When searching try to be smart about cases
+set smartcase
 set ignorecase
-set magic                                                                      " For regular expressions turn magic on
-set hlsearch                                                                   " Highlight search results
-set incsearch                                                                  " Makes search act like search in modern browsers 
+set hlsearch
+set incsearch
 
+map 0 ^
 map <silent> <leader><cr> :noh<cr>
 map <leader>pp :setlocal paste!<cr>
-map <leader>ff :Ag<space>""<left>
-
-" Remap VIM 0 to first non-blank character
-map 0 ^
-nmap <leader>w :w!<cr>
-cmap w!! w !sudo tee % >/dev/null
-map <F9> :!ctags --exclude=public --exclude=_html --exclude=tmp --exclude=log --exclude=coverage --extra=+f -R *<CR><CR>
-
-map <F5> :BD<CR>
 map <F6> :bd<CR>
 map <F7> :bd<CR>:BD<CR>
+map <F9> :!ctags --exclude=public --exclude=_html --exclude=tmp --exclude=log --exclude=coverage --extra=+f -R *<CR><CR>
 
 nmap <C-n> :bnext<CR>
 nmap <C-b> :bprev<CR>
