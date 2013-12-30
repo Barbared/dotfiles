@@ -12,8 +12,8 @@
 [color "diff"]
   meta = yellow bold
   frag = magenta bold
-  old = red
-  new = green
+  old = red bold
+  new = green bold
 [color "status"]
   added = yellow
   changed = green
@@ -21,7 +21,6 @@
 [alias]
   s = status
   co = checkout
-  aa = add --all
   b = branch
   pretty = log --graph --all --decorate --oneline
 [grep]
@@ -30,4 +29,7 @@
   default = upstream
   default = tracking
 [merge]
-    mergeoptions = --no-ff
+  mergeoptions = --no-ff
+[core]
+	excludesfile = /Users/barbared/.gitignore
+
