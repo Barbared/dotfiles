@@ -78,10 +78,10 @@ map <C-h> <C-W>h
 map <C-l> <C-W>l
 
 " Vim Hardcore
-map <Left> :echo "Use H!"<cr>
-map <Right> :echo "Use L!"<cr>
-map <Up> :echo "Use K!"<cr>
-map <Down> :echo Use J!"<cr>
+" map <Left> :echo "Use H!"<cr>
+" map <Right> :echo "Use L!"<cr>
+" map <Up> :echo "Use K!"<cr>
+" map <Down> :echo Use J!"<cr>
 
 
 nnoremap <leader>gb :Gblame<cr>

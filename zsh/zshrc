@@ -15,8 +15,6 @@ export RUBY_HEAP_FREE_MIN=500000
 export CC=/usr/local/bin/gcc-4.2
 export CPPFLAGS=-I/opt/X11/include
 
-export MY_SANDBOX=sandbox2
-
 plugins=(git bundler osx ruby rails brew cap gem rake ssh-agent)
 
 source $ZSH/oh-my-zsh.sh
