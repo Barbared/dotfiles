@@ -53,6 +53,10 @@ set tabstop=2
 set noerrorbells visualbell t_vb=
 set colorcolumn=80
 
+set list
+set listchars=""
+set listchars+=trail:.
+
 map <leader><leader> <c-^>
 map <leader>ff :Ag<space>""<left>
 map <leader>§ :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
