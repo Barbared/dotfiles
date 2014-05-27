@@ -5,29 +5,22 @@ if executable('/bin/zsh')
 endif
 
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/bufkill.vim'
 Bundle 'kien/ctrlp.vim'
-Bundle 'othree/html5.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-sensible'
-Bundle 'epmatsw/ag.vim'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'ervandew/supertab'
-Bundle 'nono/vim-handlebars'
-Bundle 'Shutnik/jshint2.vim'
-Bundle 'kchmck/vim-coffee-script'
 Bundle 'elzr/vim-json'
-Bundle 'benmills/vimux'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'skalnik/vim-vroom'
-Bundle 'rking/ag.vim'
 
 set term=xterm-256color
 set background=dark
@@ -40,6 +33,7 @@ hi TabLineFill cterm=NONE ctermbg=NONE ctermfg=1 gui=NONE
 hi TabLineSel ctermfg=2
 hi VertSplit cterm=NONE ctermfg=2 gui=NONE
 
+set nocompatible
 set number
 set expandtab
 set hlsearch
@@ -87,7 +81,6 @@ map <C-l> <C-W>l
 " map <Up> :echo "Use K!"<cr>
 " map <Down> :echo Use J!"<cr>
 
-
 nnoremap <leader>gb :Gblame<cr>
 
 if has("autocmd")
@@ -129,25 +122,3 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeMouseMode = 1
 let NERDTreeIgnore = ['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$', 'whoosh_index', 'xapian_index', '.*.pid', 'monitor.py', '.*-fixtures-.*.json', '.*\.o$', 'db.db', 'tags.bak', 'tags']
-
-let jshint2_save = 1
-
-" The Silver Searcher
-if executable('ag')
-  " Use ag over grep
-  set grepprg=ag\ --nogroup\ --nocolor
-
-  " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-  let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-  " ag is fast enough that CtrlP doesn't need to cache
-  let g:ctrlp_use_caching = 0
-  
-  " bind K to grep word under cursor
-  nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
-  
-  " bind \ (backward slash) to grep shortcut
-  command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-endif
-
-nnoremap \ :Ag<SPACE>
