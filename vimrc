@@ -52,13 +52,11 @@ set listchars=""
 set listchars+=trail:.
 
 map <leader><leader> <c-^>
-map <leader>ff :Ag<space>""<left>
-map <leader>§ :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 map <silent> <leader><cr> :noh<cr>
+map <leader>§ :%s/:\([^ ]*\)\(\s*\)=>/\1:/g<cr>
 
 map <F5> :BD<CR>
 map <F6> :bd<CR>
-map <F7> :bd<CR>:BD<CR>
 
 map <leader>. :A<cr>
 map <leader>/ :vs<cr>,.

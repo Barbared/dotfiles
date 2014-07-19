@@ -5,7 +5,7 @@ ZSH_THEME="robbyrussell"
 export EDITOR=vim
 export PATH=$PATH:$HOME/bin
 
-export RUBY_HEAP_MIN_SLOTS=1000000
+export RUBY_GC_HEAP_INIT_SLOTS=1000000
 export RUBY_HEAP_SLOTS_INCREMENT=1000000
 export RUBY_HEAP_SLOTS_GROWTH_FACTOR=1
 export RUBY_GC_MALLOC_LIMIT=100000000
@@ -32,4 +32,6 @@ if [ -e "$HOME/dotfiles/zsh/otb.sh" ]; then
 fi
 
 # Customize to your needs...
-export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/barbared/Code/247/unicorns:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin:/usr/X11/bin:/usr/local/sbin:/usr/local/mysql/bin:/Users/davidedippolito/Code/247/unicorns:$PATH"
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting

@@ -31,5 +31,5 @@
 [merge]
   mergeoptions = --no-ff
 [core]
-	excludesfile = /Users/barbared/.gitignore
+	excludesfile = /Users/davidedippolito/.gitignore
 
