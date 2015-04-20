@@ -1,6 +1,6 @@
 [user]
   name = Davide Dippolito
-  email = davide.dippolito@onthebeach.co.uk
+  email = davide.dippolito@fundingcircle.com
 [github]
   user = barbared
 [color]
@@ -31,5 +31,5 @@
 [merge]
   mergeoptions = --no-ff
 [core]
-	excludesfile = /Users/davidedippolito/.gitignore
+  excludesfile = /Users/davidedippolito/.gitignore
 
