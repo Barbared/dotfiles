@@ -28,7 +28,17 @@ if [ -e "$HOME/dotfiles/zsh/aliases.sh" ]; then
 fi
 
 # Customize to your needs...
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin:$PATH"
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:$HOME/bin"
+eval "$(rbenv init -)"
+
+export DOCKER_HOST=tcp://192.168.59.103:2376
+export DOCKER_CERT_PATH=/Users/barbared/.boot2docker/certs/boot2docker-vm
+export DOCKER_TLS_VERIFY=1
+
+PERL_MB_OPT="--install_base \"/Users/barbared/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/Users/barbared/perl5"; export PERL_MM_OPT;
+
+source $HOME/code/fc/devtools/.source

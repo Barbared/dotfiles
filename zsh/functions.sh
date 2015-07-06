@@ -14,4 +14,4 @@ branches() { string_with_dots $(translate_branch_name $1) $(translate_branch_nam
 
 compare_branches() { /usr/bin/open -a "/Applications/Google Chrome.app" $(compare_url ${1-master} ${2-$(git_current_branch)}); }
 
-compare_url() { echo "https://github.otbeach.com/onthebeach/$(app_name)/compare/$(branches $1 $2)"; }
+compare_url() { echo "https://github.com/FundingCircle/$(app_name)/compare/$(branches $1 $2)"; }

@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/barbared/.rbenv/versions/2.2.1/lib/ruby/gems/2.2.0/bundler/gems/rails-fundingcircle-0a5a9105883f'
+let g:netrw_dirhist_2='/Users/barbared/code/fc/auto_invest/app/fca_client'
+let g:netrw_dirhist_3='/Users/barbared/code/fc/auto_invest/app'
+let g:netrw_dirhist_4='/Users/barbared/code/fc/auto_invest/app/fca_client'
+let g:netrw_dirhist_5='/Users/barbared/code/fc/auto_invest/app'
+let g:netrw_dirhist_6='/Users/barbared/code/fc/auto_invest/config'
+let g:netrw_dirhist_7='/Users/barbared/code/fc/prodops-scripts/reconciler/spec'
+let g:netrw_dirhist_8='/Users/barbared/code/fc/prodops-scripts/reconciler/lib'
+let g:netrw_dirhist_9='/Users/barbared/code/fc/prodops-scripts/reconciler/spec'
