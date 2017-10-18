@@ -6,21 +6,26 @@ endif
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'vim-scripts/bufkill.vim'
-Bundle 'kien/ctrlp.vim'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-sensible'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
-Bundle 'ervandew/supertab'
-Bundle 'elzr/vim-json'
-Bundle 'scrooloose/syntastic'
-Bundle 'scrooloose/nerdtree'
-Bundle 'skalnik/vim-vroom'
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'vim-scripts/bufkill.vim'
+Plugin 'kien/ctrlp.vim'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-commentary'
+Plugin 'tpope/vim-sensible'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-rails'
+Plugin 'ervandew/supertab'
+Plugin 'elzr/vim-json'
+Plugin 'scrooloose/syntastic'
+Plugin 'scrooloose/nerdtree'
+Plugin 'skalnik/vim-vroom'
+
+call vundle#end()
+filetype plugin indent on 
 
 set term=xterm-256color
 set background=dark
