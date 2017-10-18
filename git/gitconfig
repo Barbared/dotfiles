@@ -5,6 +5,9 @@
   user = barbared
 [color]
   ui = auto
+  branch = auto
+  diff = auto
+  status = auto
 [color "branch"]
   current = yellow reverse
   local = yellow
@@ -23,6 +26,8 @@
   co = checkout
   b = branch
   pretty = log --graph --all --decorate --oneline
+  please = push --force-with-lease
+  commend = commit --amend --no-edit
 [grep]
   lineNumber = true
 [push]
@@ -31,5 +36,6 @@
 [merge]
   mergeoptions = --no-ff
 [core]
-  excludesfile = /Users/davidedippolito/.gitignore
-
+  excludesfile = /Users/ddippolito/.gitignore
+[fetch]
+  prune = true

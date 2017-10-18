@@ -5,12 +5,13 @@ if executable('/bin/zsh')
 endif
 
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle
+set rtp+=/usr/local/opt/fzf
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
 Bundle 'vim-scripts/bufkill.vim'
-Bundle 'kien/ctrlp.vim'
+" Bundle 'kien/ctrlp.vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-sensible'
@@ -21,6 +22,9 @@ Bundle 'elzr/vim-json'
 Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdtree'
 Bundle 'skalnik/vim-vroom'
+" Bundle 'leafgarland/typescript-vim'
+Bundle 'junegunn/fzf'
+Bundle 'junegunn/fzf.vim'
 
 set term=xterm-256color
 set background=dark
@@ -120,3 +124,13 @@ let NERDTreeMinimalUI = 1
 let NERDTreeDirArrows = 1
 let NERDTreeMouseMode = 1
 let NERDTreeIgnore = ['.vim$', '\~$', '.*\.pyc$', 'pip-log\.txt$', 'whoosh_index', 'xapian_index', '.*.pid', 'monitor.py', '.*-fixtures-.*.json', '.*\.o$', 'db.db', 'tags.bak', 'tags']
+
+
+"" FZF
+let g:fzf_height = '~40%'
+let g:fzf_nvim_statusline = 1
+nnoremap <silent><Leader>p :Files<CR>
+nnoremap <silent><Leader>o :Buffers<CR>
+nnoremap <silent><Leader>f :BTags<CR>
+nnoremap <silent><Leader>l :Lines<CR>
+nnoremap <silent><Leader>\ :Ag<CR>
