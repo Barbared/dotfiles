@@ -1,5 +1,3 @@
-set_github_remote() { git remote set-url origin git@github.otbeach.com:onthebeach/"$1".git; }
-
 translate_branch_name() { echo "$1" | tr / \;; }
 
 git_root() { git rev-parse --show-toplevel; }
